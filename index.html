@@ -4,12 +4,224 @@
     <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <title>UAF Responsive Form</title>
 
-    <script>function validateForm(opt, timer) {
+    <script>function validateImage(value) {
+      //TODO
+      return value === "8";
+    }
+
+    function validateColor(colorMix) {
+      return colorMix === "magenta";
+    }
+
+    function formatDate(date) {
+      let d = new Date(date),
+              month = '' + (d.getMonth() + 1),
+              day = '' + d.getDate(),
+              year = d.getFullYear();
+
+      if (month.length < 2)
+        month = '0' + month;
+      if (day.length < 2)
+        day = '0' + day;
+
+      return [year, month, day].join('-');
+    }
+
+    function validateDate(todaysDate) {
+      //TODO
+      let todayDate = formatDate(new Date());
+      return todayDate === todaysDate;
+    }
+
+    function validateVideo(videoAnswer) {
+      //TODO
+      // alert(videoAnswer.dogs);
+      return false;
+    }
+
+    function validateRange(rangeAnswers) {
+      return parseInt(rangeAnswers) > 120;
+    }
+
+    function validateTime(timeAnswer) {
+      // alert(timeAnswer);
+      let time = timeAnswer.split(":");
+      return parseInt(time[0]) === 7 && parseInt(time[1]) > 9 && parseInt(time[1]) < 26;
+    }
+
+    function validateBrightestColor(colorPickAnswer) {
+      return colorPickAnswer === "#000000";
+    }
+
+    function validatePlaceholder(placeholderAnswer) {
+      return placeholderAnswer === "uu5uafuu5";
+    }
+
+    function validateNavbar(navbarAnswer) {
+      return navbarAnswer === "myprofile";
+    }
+
+    function validateYtb(ytbAnswer) {
+      return ytbAnswer.toLowerCase() === "vladimir";
+    }
+
+    function validatePageNumber(pageAnswer) {
+      return parseInt(pageAnswer) === 9;
+    }
+
+    function validateOl(orlAnswer) {
+      return orlAnswer === "5";
+    }
+
+    function validateCode(codeAnswer) {
+      return codeAnswer.toLowerCase() === "tincidunt";
+    }
+
+    function validateTable(tableAnswer) {
+      return tableAnswer === "144";
+    }
+
+    function validateIceCream(flavorSelect) {
+      return flavorSelect === "Cocoa";
+    }
+
+    function validateMap(mapAnswer) {
+      return mapAnswer === "Terchova";
+    }
+
+    function validateFormComponents(opt){
+      let correctAnswers = 0;
+      let incorrectAnswers = 0;
+      let wrongAnswers = [];
+
+      if (validateImage(opt.component.getValues().imgNumber)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("1");
+      }
+
+      if (validateColor(opt.component.getValues().colorMix)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("2");
+      }
+      
+      if (validateDate(opt.component.getValues().todaysDate)) {
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("3");
+      }
+
+      if (validateVideo(opt.component.getValues().videoAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("4");
+      }
+
+      if (validateRange(opt.component.getValues().rangeAnswers)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("5");
+      }
+
+      if (validateTime(opt.component.getValues().timeAnswer)) {
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("6")
+      }
+
+      if (validateBrightestColor(opt.component.getValues().colorPickAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("7")
+      }
+
+      if (validatePlaceholder(opt.component.getValues().placeholderAnswer)) {
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("8");
+      }
+
+      if (validateNavbar(opt.component.getValues().navbarAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("9");
+      }
+
+      if (validateYtb(opt.component.getValues().ytbAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("10");
+      }
+
+      if (validatePageNumber(opt.component.getValues().pageAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("11");
+      }
+
+      if (validateOl(opt.component.getValues().orlAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("12");
+      }
+
+      if (validateCode(opt.component.getValues().codeAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("13");
+      }
+
+      if (validateTable(opt.component.getValues().tableAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("14");
+      }
+
+      if (validateIceCream(opt.component.getValues().flavorSelect)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("15");
+      }
+
+      if (validateMap(opt.component.getValues().mapAnswer)){
+        correctAnswers++;
+      } else {
+        incorrectAnswers++;
+        wrongAnswers.push("16");
+      }
+      // validateMap() ? correctAnswers++ : incorrectAnswers++;
+      return { correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers, wrongAnswers: wrongAnswers};
+    }
+
+    function validateForm(opt, timer) {
+      // let correctAnswers = 0;
+      // let incorrectAnswers = 0;
+      // let wrongAnswers = [];
       let d = new Date();
       let duration = (d.getTime() - timer.getTime()) / 1000;
+      const {correctAnswers, incorrectAnswers, wrongAnswers} = validateFormComponents(opt);
       alert("Form done in " + duration + "s");
-      alert(opt.component.getValues().imgNumber);
-      // alert(JSON.stringify(opt.component.getValues(), null, 1))
+      alert("Correct answers: " + correctAnswers);
+      alert("Wrong answers: " + incorrectAnswers);
+      alert("Wrong answers: " + wrongAnswers);
+      alert(JSON.stringify(opt.component.getValues(), null, 1))
+      window.location.reload();
     }
 
     if (!location.href.match(/^(about:|file:)/)) {
@@ -38,7 +250,8 @@
 
           "uu5g04": "https://cdn.plus4u.net/uu-uu5g04/1.0.0/uu5g04.min.js",
           "uu5g04-bricks": "https://cdn.plus4u.net/uu-uu5g04/1.0.0/uu5g04-bricks.min.js",
-          "uu5g04-forms": "https://cdn.plus4u.net/uu-uu5g04/1.0.0/uu5g04-forms.min.js"
+          "uu5g04-forms": "https://cdn.plus4u.net/uu-uu5g04/1.0.0/uu5g04-forms.min.js",
+          "uu5g04-hooks": "https://cdn.plus4u.net/uu-uu5g04/1.0.0/uu5g04-hooks.min.js"
         }
       });
     </script>
@@ -52,16 +265,10 @@
     <script type="text/babel">
       import UU5 from "uu5g04";
       import "uu5g04-bricks";
-      // import "uu5g04-hooks";
+      import { useLsiValues } from "uu5g04-hooks";
       import "uu5g04-forms";
-      // import Lsi from "./responsive-form-lsi";
+      // import Lsi from "./lsi.js";
 
-      UU5.Common.Tools.setLanguage("en");
-
-      //@@viewOn:example
-      //@@viewOn:imports
-      // import { useLsiValues } from "uu5g04-hooks";
-      //@@viewOff:imports
 
       const Page = UU5.Common.VisualComponent.create({
 
@@ -82,7 +289,7 @@
         },
 
         _contentRender() {
-          // const inputLsi = useLsiValues(Lsi);
+          // const inputLsi = useLsiValues(undefined);
 
           if (this.state.form === true) {
             return <UU5.Bricks.Div>
