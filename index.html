@@ -52,9 +52,16 @@
     <script type="text/babel">
       import UU5 from "uu5g04";
       import "uu5g04-bricks";
-      // import { useLsiValues } from "uu5g04-hooks";
+      // import "uu5g04-hooks";
       import "uu5g04-forms";
       // import Lsi from "./responsive-form-lsi";
+
+      UU5.Common.Tools.setLanguage("en");
+
+      //@@viewOn:example
+      //@@viewOn:imports
+      // import { useLsiValues } from "uu5g04-hooks";
+      //@@viewOff:imports
 
       const Page = UU5.Common.VisualComponent.create({
 
@@ -95,6 +102,8 @@
                   </UU5.Bricks.NavBar.Nav.Item>
                 </UU5.Bricks.NavBar.Nav>
               </UU5.Bricks.NavBar>
+
+              <UU5.Bricks.LanguageSelector />
 
               <UU5.Forms.Form
                 ref_={(form) => this._form = form}
