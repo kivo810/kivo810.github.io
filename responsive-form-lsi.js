@@ -1,4 +1,4 @@
-const Lsi = {
+const ResponsiveFormLsi = {
   startStopwatch: {
     en: "Start stopwatch",
     sk: "Zapni stopky"
@@ -113,4 +113,4 @@ const Lsi = {
   }
 };
 
-export default Lsi;
+export default ResponsiveFormLsi;
