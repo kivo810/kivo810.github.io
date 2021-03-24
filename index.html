@@ -59,8 +59,8 @@
 
         getInitialState() {
           return {
-            value: "John",
-            text: "Text",
+            // value: "John",
+            // text: "Text",
             imgNumber: 0,
             form: false
           }
@@ -71,19 +71,30 @@
 
           if (this.state.form === true) {
             return <UU5.Bricks.Div>
+
+              <UU5.Bricks.NavBar colorSchema="primary">
+                <UU5.Bricks.NavBar.Header content="Menu" />
+                <UU5.Bricks.NavBar.Nav>
+                  <UU5.Bricks.NavBar.Nav.Item><UU5.Bricks.Icon icon="mdi-home" />home</UU5.Bricks.NavBar.Nav.Item>
+                  <UU5.Bricks.NavBar.Nav.Item>
+                    <UU5.Bricks.Icon icon="mdi-newspaper" />news
+                  </UU5.Bricks.NavBar.Nav.Item>
+                  <UU5.Bricks.NavBar.Nav.Item>
+                    <UU5.Bricks.Icon icon="mdi-account" />myProfile
+                  </UU5.Bricks.NavBar.Nav.Item>
+                  <UU5.Bricks.NavBar.Nav.Item>
+                    <UU5.Bricks.Icon icon="mdi-logout" style={{ color: "red" }} />logOut
+                  </UU5.Bricks.NavBar.Nav.Item>
+                </UU5.Bricks.NavBar.Nav>
+              </UU5.Bricks.NavBar>
+
               <UU5.Forms.Form
                 ref_={(form) => this._form = form}
                 name="responsiveForm"
                 onSave={(opt) => alert(JSON.stringify(opt.component.getValues(), null, 1))}
                 onCancel={() => this.setState({ form: false })}
               >
-                <UU5.Forms.Text
-                  name="textName"
-                  value={this.state.value}
-                  label="Name"
-                  required
-                />
-                <UU5.Forms.TextArea name="textAreaName" value={this.state.text} label="Description" />
+
 
                 <UU5.Bricks.Div>
                   <UU5.Bricks.Image src={"https://images.pexels.com/photos/194094/pexels-photo-194094.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=1080&w=1920"}
@@ -411,6 +422,20 @@
                 />
                 {/*@@viewOff:0*/}
               </UU5.Bricks.ButtonGroup>
+
+              <UU5.Bricks.Div>
+                <UU5.Bricks.Pagination
+                        items={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
+                        activeIndex={8}
+                        range={10}
+                        prevLabel="Previous"
+                        nextLabel="Next"
+                        size="m"
+                        onChanged={(comp, index, newActive) => console.log(comp, index, newActive)}
+                        background
+                />
+              </UU5.Bricks.Div>
+
             </UU5.Bricks.Div>
           } else {
             return <UU5.Bricks.Button content="Enter Form" onClick={() => this.setState({ form: true })} />
