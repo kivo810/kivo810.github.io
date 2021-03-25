@@ -39,8 +39,8 @@
       return false;
     }
 
-    function validateRange(rangeAnswers) {
-      return parseInt(rangeAnswers) > 120;
+    function validateRange(rangeAnswer) {
+      return parseInt(rangeAnswer) > 120;
     }
 
     function validateTime(timeAnswer) {
@@ -122,7 +122,7 @@
         wrongAnswers.push("4");
       }
 
-      if (validateRange(opt.component.getValues().rangeAnswers)){
+      if (validateRange(opt.component.getValues().rangeAnswer)){
         correctAnswers++;
       } else {
         incorrectAnswers++;
@@ -270,9 +270,11 @@
       // import Lsi from "./lsi.js";
 
       // const left = UU5.Common.Css.css({ float: "left", width: "50%"});
-      const left = UU5.Common.Css.css({ float: "left"});
+      const left = UU5.Common.Css.css({ float: "left", width: "300px"});
       // const right = UU5.Common.Css.css({ float: "right", width: "50%"});
       const right = UU5.Common.Css.css({ float: "right"});
+
+      const inline = UU5.Common.Css.css({ display: "inline-block", width: "50%"});
 
       const Page = UU5.Common.VisualComponent.create({
 
@@ -382,7 +384,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={left}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Forms.Radios label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
@@ -441,7 +443,7 @@
                   </UU5.Forms.Radios>
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={right}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Forms.DatePicker
                           disabled={this.state.formButton}
                           label={
@@ -488,7 +490,7 @@
                                         ]}/>
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={left}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Forms.Slider label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
@@ -509,7 +511,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={right}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Forms.TimePicker
                           label={
                             <UU5.Bricks.Lsi>
@@ -527,7 +529,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={left}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Forms.ColorPicker
                           label={
                             <UU5.Bricks.Lsi>
@@ -544,7 +546,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={right}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Forms.Text
                           label={
                             <UU5.Bricks.Lsi>
@@ -577,7 +579,7 @@
                 </UU5.Bricks.Div>
 
 
-                <UU5.Bricks.Div align="center">
+                <UU5.Bricks.Div>
                   <UU5.Forms.Radios
                           label={
                             <UU5.Bricks.Lsi>
@@ -671,7 +673,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={left}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Bricks.Section content={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
@@ -710,7 +712,7 @@
                   </UU5.Forms.Select>
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={right} hidden={this.state.formButton}>
+                <UU5.Bricks.Div className={inline} hidden={this.state.formButton}>
                   <UU5.Bricks.Text>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur in coded message enim nec cursus. Maecenas eu est commodo, aliquam odio non, porttitor nisi. Nulla iaculis lorem ac rutrum malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi ipsum risus, tincidunt quis tempus sit amet, congue quis purus. Proin aliquam ex vitae augue fermentum, a ornare velit sodales. Donec fringilla mattis magna, a tempor augue gravida vel.
                     Curabitur varius aliquet ipsum sit amet accumsan. Sed nec elit lacinia, tempus diam vel, molestie erat. Ut ultrices semper magna, nec feugiat diam <b>tincidunt</b> non. Nunc ac orci turpis. Aenean finibus aliquet turpis quis porttitor. Maecenas tincidunt maximus massa non ornare. Nulla ornare posuere condimentum. Nullam dapibus, quam ac porta pulvinar, mi magna euismod urna, ut sodales neque orci eget mauris. Vivamus nec laoreet leo. Etiam vitae est sem. Duis commodo elit in orci varius semper. Aenean non massa at ipsum ultrices efficitur bibendum sed tortor. Ut volutpat ex augue, a auctor ipsum sagittis varius. Suspendisse tincidunt ultrices urna at aliquam.
@@ -732,7 +734,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={left}>
+                <UU5.Bricks.Div className={inline}>
                   <UU5.Bricks.Table bordered={true} responsive={true} hover={true} striped={true}>
                     <UU5.Bricks.Table.THead>
                       <UU5.Bricks.Table.Tr>
@@ -789,7 +791,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div className={right} hidden={this.state.formButton}>
+                <UU5.Bricks.Div className={inline} hidden={this.state.formButton}>
                   <UU5.Forms.Select
                           label={
                             <UU5.Bricks.Lsi>
