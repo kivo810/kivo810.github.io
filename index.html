@@ -297,20 +297,53 @@
               <UU5.Bricks.NavBar colorSchema="primary">
                 <UU5.Bricks.NavBar.Header content="Menu" />
                 <UU5.Bricks.NavBar.Nav>
-                  <UU5.Bricks.NavBar.Nav.Item><UU5.Bricks.Icon icon="mdi-home" />home</UU5.Bricks.NavBar.Nav.Item>
-                  <UU5.Bricks.NavBar.Nav.Item>
-                    <UU5.Bricks.Icon icon="mdi-newspaper" />news
+                  <UU5.Bricks.NavBar.Nav.Item><UU5.Bricks.Icon icon="mdi-home" />
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Home
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Domov
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
                   </UU5.Bricks.NavBar.Nav.Item>
                   <UU5.Bricks.NavBar.Nav.Item>
-                    <UU5.Bricks.Icon icon="mdi-account" />myProfile
+                    <UU5.Bricks.Icon icon="mdi-newspaper" />
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        News
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Novinky
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
                   </UU5.Bricks.NavBar.Nav.Item>
                   <UU5.Bricks.NavBar.Nav.Item>
-                    <UU5.Bricks.Icon icon="mdi-logout" style={{ color: "red" }} />logOut
+                    <UU5.Bricks.Icon icon="mdi-account" />
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        MyProfile
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Môj profil
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
+                  </UU5.Bricks.NavBar.Nav.Item>
+                  <UU5.Bricks.NavBar.Nav.Item>
+                    <UU5.Bricks.Icon icon="mdi-logout" style={{ color: "red" }} />
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Logout
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Odhlásiť
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
                   </UU5.Bricks.NavBar.Nav.Item>
                 </UU5.Bricks.NavBar.Nav>
               </UU5.Bricks.NavBar>
 
-              <UU5.Bricks.LanguageSelector />
+              <UU5.Bricks.LanguageSelector displayedLanguages={["sk", "en"]}/>
 
               <UU5.Forms.Form
                 ref_={(form) => this._form = form}
@@ -328,10 +361,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Paragraph in English. Language is get from UU5.Bricks.LsiContent component.
+                                Number of boats
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Odstavec v češtině. Jazyk se čte z komponenty UU5.Bricks.LsiContent.
+                                Počet lodí na obrázku
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -345,7 +378,16 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div align="center">
-                  <UU5.Forms.Radios label={"Color question"}
+                  <UU5.Forms.Radios label={
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        What color is created by mixing red and blue?
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Aká farba vznikne zmixovanim červenej a modrej?
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
+                  }
                                     name={"colorMix"}
                                     size="m"
                                     inputWidth="150px"
@@ -360,7 +402,16 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div>
-                  <UU5.Forms.DatePicker label={"Vyber dnešný dátum"}
+                  <UU5.Forms.DatePicker label={
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        What is the date today?
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Aký je dnes dátum?
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
+                  }
                                         name={"todaysDate"}
                                         valueType="iso"
                                         placeholder={UU5.Common.Tools.getDateString("1990-11-21", { country: "sk-sk" })}
@@ -372,7 +423,16 @@
                                     autoPlay={true}
                                     disableControls={false}>
                   </UU5.Bricks.Video>
-                  <UU5.Forms.Checkboxes label={"Video otázka"}
+                  <UU5.Forms.Checkboxes label={
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        TODO
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        TODO
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
+                  }
                                         name={"videoAnswer"}
                                         size="m"
                                         inputWidth="200px"
@@ -387,7 +447,16 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div>
-                  <UU5.Forms.Slider label={"Range question"}
+                  <UU5.Forms.Slider label={
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Choose volume more than 100
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Zvoľ hodnotu vyššiu ako 100
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
+                  }
                                     name={"rangeAnswer"}
                                     value={20}
                                     size="m"
@@ -400,7 +469,16 @@
 
                 <UU5.Bricks.Div>
                   <UU5.Forms.TimePicker
-                          label={"timeQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                Pick time between 18:05 - 18:25
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Zvoľ čas medzi 18:05 - 18:25
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"timeAnswer"}
                           size="m"
                           placeholder={"10:00"}
@@ -409,7 +487,16 @@
 
                 <UU5.Bricks.Div>
                   <UU5.Forms.ColorPicker
-                          label={"colorPicker"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                Select darkest black color
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Zvoľ najtmavšiu čiernu farbu
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"colorPickAnswer"}
                           size={"m"}
                   />
@@ -417,18 +504,45 @@
 
                 <UU5.Bricks.Div>
                   <UU5.Forms.Text
-                          label={"fillTextQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                Rewrite text from box
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Napíš text z boxu
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"placeholderAnswer"}
                           placeholder={"uu5uafuu5"}
                           size="m"
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Button>Expand button</UU5.Bricks.Button>
+                <UU5.Bricks.Button>
+                  <UU5.Bricks.Lsi>
+                    <UU5.Bricks.Lsi.Item language="en">
+                      Click to expand more question and enable answers
+                    </UU5.Bricks.Lsi.Item>
+                    <UU5.Bricks.Lsi.Item language="sk">
+                      Klikni na zobrazenie ďalších otázok a sprístupnenie nedostupných odpovedí
+                    </UU5.Bricks.Lsi.Item>
+                  </UU5.Bricks.Lsi>
+                </UU5.Bricks.Button>
 
                 <UU5.Bricks.Div align="center">
                   <UU5.Forms.Radios
-                          label={"navbarQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                What element is second in navigation menu?
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Aký prvok je druhý v navigačnom menu?
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"navbarAnswer"}
                           size="m"
                           inputWidth="150px"
@@ -447,7 +561,16 @@
                                            muted={true}
                   />
                   <UU5.Forms.Text
-                          label={"ytbQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                What is the name of third prisoner? (Can be found on 1:40)
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Aké je meno tretieho väzňa? (Nájdeš na 1:40)
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"ytbAnswer"}
                           placeholder={"Ladislav"}
                           size="m"
@@ -456,7 +579,16 @@
 
                 <UU5.Bricks.Div>
                   <UU5.Forms.Number
-                          label={"pageQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                What page is highlighted on the bottom of the page?
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Aké číslo strany dole vo formulári je zvýraznene?
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"pageAnswer"}
                           size="m"
                           min={1}
@@ -466,7 +598,16 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div>
-                  <UU5.Bricks.Section content={"movieHeader"}/>
+                  <UU5.Bricks.Section content={
+                    <UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Old Movies
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Staré filmy
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>
+                  }/>
                   <UU5.Bricks.Ol>
                     <UU5.Bricks.Li content="Godfather (1972)"/>
                     <UU5.Bricks.Li content="Fight club (1999)"/>
@@ -476,7 +617,14 @@
                   </UU5.Bricks.Ol>
 
                   <UU5.Forms.Select
-                          label={"orlQuestion"}
+                          label={<UU5.Bricks.Lsi>
+                            <UU5.Bricks.Lsi.Item language="en">
+                              Which of these movies is oldest?
+                            </UU5.Bricks.Lsi.Item>
+                            <UU5.Bricks.Lsi.Item language="sk">
+                              Ktorý z týchto filmov je najstarší?
+                            </UU5.Bricks.Lsi.Item>
+                          </UU5.Bricks.Lsi>}
                           name={"orlAnswer"}
                           size="m"
                   >
@@ -494,7 +642,16 @@
                     Curabitur varius aliquet ipsum sit amet accumsan. Sed nec elit lacinia, tempus diam vel, molestie erat. Ut ultrices semper magna, nec feugiat diam <b>tincidunt</b> non. Nunc ac orci turpis. Aenean finibus aliquet turpis quis porttitor. Maecenas tincidunt maximus massa non ornare. Nulla ornare posuere condimentum. Nullam dapibus, quam ac porta pulvinar, mi magna euismod urna, ut sodales neque orci eget mauris. Vivamus nec laoreet leo. Etiam vitae est sem. Duis commodo elit in orci varius semper. Aenean non massa at ipsum ultrices efficitur bibendum sed tortor. Ut volutpat ex augue, a auctor ipsum sagittis varius. Suspendisse tincidunt ultrices urna at aliquam.
                   </UU5.Bricks.Text>
                   <UU5.Forms.Text
-                          label={"codeQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                            <UU5.Bricks.Lsi.Item language="en">
+                              What word is written differently (highlighted)?
+                            </UU5.Bricks.Lsi.Item>
+                            <UU5.Bricks.Lsi.Item language="sk">
+                              Ktoré slovo je zvýraznené?
+                            </UU5.Bricks.Lsi.Item>
+                          </UU5.Bricks.Lsi>
+                          }
                           name={"codeAnswer"}
                           placeholder="word"
                           size="m"
@@ -505,7 +662,16 @@
                   <UU5.Bricks.Table bordered={true} responsive={true} hover={true} striped={true}>
                     <UU5.Bricks.Table.THead>
                       <UU5.Bricks.Table.Tr>
-                        <UU5.Bricks.Table.Th content={"hobbitTrilogy"} colSpan={5} />
+                        <UU5.Bricks.Table.Th content={
+                          <UU5.Bricks.Lsi>
+                            <UU5.Bricks.Lsi.Item language="en">
+                              The Hobbit Trilogy
+                            </UU5.Bricks.Lsi.Item>
+                            <UU5.Bricks.Lsi.Item language="sk">
+                              Trilógia Hobit
+                            </UU5.Bricks.Lsi.Item>
+                          </UU5.Bricks.Lsi>
+                        } colSpan={5} />
                       </UU5.Bricks.Table.Tr>
                     </UU5.Bricks.Table.THead>
                     <UU5.Bricks.Table.TBody>
@@ -533,7 +699,16 @@
                     </UU5.Bricks.Table.TBody>
                   </UU5.Bricks.Table>
                   <UU5.Forms.Text
-                          label={"tableQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                Length of 3. movie (The Hobbit: The Battle of the Five Armies)
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Dĺžka 3. filmu Hobita
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"tableAnswer"}
                           placeholder="120"
                           size="m"
@@ -542,7 +717,16 @@
 
                 <UU5.Bricks.Div>
                   <UU5.Forms.Select
-                          label={"flavor"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                Choose black ice cream flavor
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Zvoľ príchuť zmrzliny s čiernou farbou
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"flavorSelect"}
                   >
                     <UU5.Forms.Select.Option value="Apple"/>
@@ -562,7 +746,16 @@
                   />
 
                   <UU5.Forms.Select
-                          label={"mapQuestion"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                Which place is pinched in the map?
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Ktoré miesto je pripnuté na mape?
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"mapAnswer"}
                   >
                     <UU5.Forms.Select.Option value="Rajec"/>
