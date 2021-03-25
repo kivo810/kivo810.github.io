@@ -269,6 +269,8 @@
       import "uu5g04-forms";
       // import Lsi from "./lsi.js";
 
+      const left = UU5.Common.Css.css({ float: "left", width: "50%"});
+      const right = UU5.Common.Css.css({ float: "right", width: "50%"});
 
       const Page = UU5.Common.VisualComponent.create({
 
@@ -377,7 +379,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div align="center">
+                <UU5.Bricks.Div className={left}>
                   <UU5.Forms.Radios label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
@@ -401,7 +403,7 @@
                   </UU5.Forms.Radios>
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div>
+                <UU5.Bricks.Div className={right}>
                   <UU5.Forms.DatePicker label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
