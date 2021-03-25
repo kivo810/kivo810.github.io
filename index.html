@@ -284,6 +284,7 @@
           return {
             // value: "John",
             // text: "Text",
+            formButton: true,
             timer: null,
             imgNumber: 0,
             form: false
@@ -363,10 +364,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Number of boats
+                                1. Number of boats
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Počet lodí na obrázku
+                                1. Počet lodí na obrázku
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -383,10 +384,10 @@
                   <UU5.Forms.Radios label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
-                        What color is created by mixing red and blue?
+                        2. What color is created by mixing red and blue?
                       </UU5.Bricks.Lsi.Item>
                       <UU5.Bricks.Lsi.Item language="sk">
-                        Aká farba vznikne zmixovanim červenej a modrej?
+                        2. Aká farba vznikne zmixovanim červenej a modrej?
                       </UU5.Bricks.Lsi.Item>
                     </UU5.Bricks.Lsi>
                   }
@@ -439,13 +440,15 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div className={right}>
-                  <UU5.Forms.DatePicker label={
+                  <UU5.Forms.DatePicker
+                          disabled={this.state.formButton}
+                          label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
-                        What is the date today?
+                        3. What is the date today?
                       </UU5.Bricks.Lsi.Item>
                       <UU5.Bricks.Lsi.Item language="sk">
-                        Aký je dnes dátum?
+                        3. Aký je dnes dátum?
                       </UU5.Bricks.Lsi.Item>
                     </UU5.Bricks.Lsi>
                   }
@@ -463,10 +466,10 @@
                   <UU5.Forms.Checkboxes label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
-                        TODO
+                        4. TODO
                       </UU5.Bricks.Lsi.Item>
                       <UU5.Bricks.Lsi.Item language="sk">
-                        TODO
+                        4. TODO
                       </UU5.Bricks.Lsi.Item>
                     </UU5.Bricks.Lsi>
                   }
@@ -487,10 +490,10 @@
                   <UU5.Forms.Slider label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
-                        Choose volume more than 100
+                        5. Choose volume more than 100
                       </UU5.Bricks.Lsi.Item>
                       <UU5.Bricks.Lsi.Item language="sk">
-                        Zvoľ hodnotu vyššiu ako 100
+                        5. Zvoľ hodnotu vyššiu ako 100
                       </UU5.Bricks.Lsi.Item>
                     </UU5.Bricks.Lsi>
                   }
@@ -500,7 +503,7 @@
                                     min={0}
                                     max={150}
                                     step={1}
-                                    disabled
+                                    disabled={this.state.formButton}
                   />
                 </UU5.Bricks.Div>
 
@@ -509,10 +512,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Pick time between 07:10 - 07:25
+                                6. Pick time between 07:10 - 07:25
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Zvoľ čas medzi 07:10 - 07:25
+                                6. Zvoľ čas medzi 07:10 - 07:25
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -527,10 +530,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Select darkest black color
+                                7. Select darkest black color
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Zvoľ najtmavšiu čiernu farbu
+                                7. Zvoľ najtmavšiu čiernu farbu
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -544,20 +547,21 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Rewrite text from box
+                                8. Rewrite text from box
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Napíš text z boxu
+                                8. Napíš text z boxu
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
                           name={"placeholderAnswer"}
                           placeholder={"uu5uafuu5"}
                           size="m"
+                          disabled={this.state.formButton}
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Button>
+                <UU5.Bricks.Button onClick={() => this.setState({ formButton : false })}>
                   <UU5.Bricks.Lsi>
                     <UU5.Bricks.Lsi.Item language="en">
                       Click to expand more question and enable answers
@@ -573,10 +577,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                What element is second in navigation menu?
+                                9. What element is second in navigation menu?
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Aký prvok je druhý v navigačnom menu?
+                                9. Aký prvok je druhý v navigačnom menu?
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -629,10 +633,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                What is the name of third prisoner? (Can be found on 1:40)
+                                10. What is the name of third prisoner? (Can be found on 1:40)
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Aké je meno tretieho väzňa? (Nájdeš na 1:40)
+                                10. Aké je meno tretieho väzňa? (Nájdeš na 1:40)
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -647,10 +651,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                What page is highlighted on the bottom of the page?
+                                11. What page is highlighted on the bottom of the page?
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Aké číslo strany dole vo formulári je zvýraznene?
+                                11. Aké číslo strany dole vo formulári je zvýraznene?
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -684,10 +688,10 @@
                   <UU5.Forms.Select
                           label={<UU5.Bricks.Lsi>
                             <UU5.Bricks.Lsi.Item language="en">
-                              Which of these movies is oldest?
+                              12. Which of these movies is oldest?
                             </UU5.Bricks.Lsi.Item>
                             <UU5.Bricks.Lsi.Item language="sk">
-                              Ktorý z týchto filmov je najstarší?
+                              12. Ktorý z týchto filmov je najstarší?
                             </UU5.Bricks.Lsi.Item>
                           </UU5.Bricks.Lsi>}
                           name={"orlAnswer"}
@@ -710,16 +714,17 @@
                           label={
                             <UU5.Bricks.Lsi>
                             <UU5.Bricks.Lsi.Item language="en">
-                              What word is written differently (highlighted)?
+                              13. What word is written differently (highlighted)?
                             </UU5.Bricks.Lsi.Item>
                             <UU5.Bricks.Lsi.Item language="sk">
-                              Ktoré slovo je zvýraznené?
+                              13. Ktoré slovo je zvýraznené?
                             </UU5.Bricks.Lsi.Item>
                           </UU5.Bricks.Lsi>
                           }
                           name={"codeAnswer"}
                           placeholder="word"
                           size="m"
+                          hidden={this.state.formButton}
                   />
                 </UU5.Bricks.Div>
 
@@ -767,10 +772,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Length of 3. movie (The Hobbit: The Battle of the Five Armies)
+                                14. Length of 3. movie (The Hobbit: The Battle of the Five Armies)
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Dĺžka 3. filmu Hobita
+                                14. Dĺžka 3. filmu Hobita
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
@@ -785,14 +790,15 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Choose black ice cream flavor
+                                15. Choose black ice cream flavor
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Zvoľ príchuť zmrzliny s čiernou farbou
+                                15. Zvoľ príchuť zmrzliny s čiernou farbou
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
                           name={"flavorSelect"}
+                          hidden={this.state.formButton}
                   >
                     <UU5.Forms.Select.Option value="Apple"/>
                     <UU5.Forms.Select.Option value="Vanilla"/>
@@ -814,10 +820,10 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                Which place is pinched in the map?
+                                16. Which place is pinched in the map?
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                Ktoré miesto je pripnuté na mape?
+                                16. Ktoré miesto je pripnuté na mape?
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
