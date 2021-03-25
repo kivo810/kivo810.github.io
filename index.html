@@ -325,7 +325,16 @@
                                     responsive={true} >
                   </UU5.Bricks.Image>
                   <UU5.Forms.Number
-                          label={"Pocet lodi"}
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                Paragraph in English. Language is get from UU5.Bricks.LsiContent component.
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                Odstavec v češtině. Jazyk se čte z komponenty UU5.Bricks.LsiContent.
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"imgNumber"}
                           size="m"
                           min={0}
