@@ -64,7 +64,7 @@
             // text: "Text",
             formButton: true,
             timer: null,
-            imgNumber: 0,
+            videoAnswer: 0,
             form: false
           }
         },
@@ -135,26 +135,37 @@
 
 
                 <UU5.Bricks.Div>
-                  <UU5.Bricks.Image src={"https://images.pexels.com/photos/194094/pexels-photo-194094.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=1080&w=1920"}
+                  <UU5.Bricks.Image src={"https://cdn.pixabay.com/photo/2017/03/12/13/41/beaded-2137080_960_720.jpg"}
                                     responsive={true} >
                   </UU5.Bricks.Image>
-                  <UU5.Forms.Number
+                  <UU5.Forms.Checkboxes
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                1. Number of boats
+                                1. What colors are shown on the picture?
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                1. Počet lodí na obrázku
+                                1. Aké farby sú zobrazené na obrázku?
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
-                          name={"imgNumber"}
+                          name={"imgAnswer"}
                           size="m"
-                          min={0}
-                          max={100}
-                          step={1}
-                          value={this.state.imgNumber}
+                          inputWidth="200px"
+                          value={[
+                            {label: 'Yellow', name: 'yellow'},
+                            {label: 'Brown', name: 'brown'},
+                            {label: 'Red', name: 'red'},
+                            {label: 'Pink', name: 'pink'},
+                            {label: 'Green', name: 'green'},
+                            {label: 'White', name: 'white'}
+                            ]}
+                          // name={"imgNumber"}
+                          // size="m"
+                          // min={0}
+                          // max={100}
+                          // step={1}
+                          // value={this.state.imgNumber}
                   />
                 </UU5.Bricks.Div>
 
@@ -237,31 +248,40 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div align="center">
-                  <UU5.Bricks.Video src={"https://player.vimeo.com/external/242215707.hd.mp4?s=78dc8d65b39fc899a51d726bc533475a29941e90&profile_id=174"}
+                  <UU5.Bricks.Video src={"https://vod-progressive.akamaized.net/exp=1616804570~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3404%2F17%2F442022592%2F1934500595.mp4~hmac=42c5b76b217efaea716231b0980d174f41a3db26e4fc0c78ff19254d1ea543fc/vimeo-prod-skyfire-std-us/01/3404/17/442022592/1934500595.mp4"}
+                                    loop={true}
                                     autoPlay={true}
+                                    responsive={true}
                                     disableControls={false}>
                   </UU5.Bricks.Video>
-                  <UU5.Forms.Checkboxes label={
+                  <UU5.Forms.Number label={
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
-                        4. TODO
+                        4. How many red shapes are in the video?
                       </UU5.Bricks.Lsi.Item>
                       <UU5.Bricks.Lsi.Item language="sk">
-                        4. TODO
+                        4. Koľko červených tvarov je vo videu?
                       </UU5.Bricks.Lsi.Item>
                     </UU5.Bricks.Lsi>
                   }
-                                        name={"videoAnswer"}
-                                        size="m"
-                                        inputWidth="200px"
-                                        value={[
-                                          {label: 'Dogs', name: 'dogs'},
-                                          {label: 'Cats', name: 'cats'},
-                                          {label: 'Yaks', name: 'yaks'},
-                                          {label: 'Value4', name: 'value4'},
-                                          {label: 'Value5', name: 'value5'},
-                                          {label: 'Value6', name: 'value6'}
-                                        ]}/>
+                          name={"videoAnswer"}
+                          size="m"
+                          min={0}
+                          max={100}
+                          step={1}
+                          value={this.state.videoAnswer}
+                                        // name={"videoAnswer"}
+                                        // size="m"
+                                        // inputWidth="200px"
+                                        // value={[
+                                        //   {label: 'Dogs', name: 'dogs'},
+                                        //   {label: 'Cats', name: 'cats'},
+                                        //   {label: 'Yaks', name: 'yaks'},
+                                        //   {label: 'Value4', name: 'value4'},
+                                        //   {label: 'Value5', name: 'value5'},
+                                        //   {label: 'Value6', name: 'value6'}
+                                        // ]}
+                  />
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div className={inline}>
