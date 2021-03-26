@@ -24,8 +24,11 @@ function formatDate(date) {
 
 function validateDate(todaysDate) {
     //TODO
-    let todayDate = formatDate(new Date());
-    return todayDate === todaysDate;
+    let date = new Date();
+    date.setDate(date.getDate() - 2);
+    let beforeYesterday = formatDate(date);
+    alert(beforeYesterday);
+    return beforeYesterday === todaysDate;
 }
 
 function validateVideo(videoAnswer) {
