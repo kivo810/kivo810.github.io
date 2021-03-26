@@ -267,7 +267,7 @@
       import "uu5g04-bricks";
       import { useLsiValues } from "uu5g04-hooks";
       import "uu5g04-forms";
-      import ResponsiveFormLsi from "/responsive-form-lsi.js";
+      // import ResponsiveFormLsi from "/responsive-form-lsi.js";
 
       var widthScreen = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       var width = widthScreen / 2 - 75;
@@ -298,7 +298,7 @@
         },
 
         _contentRender() {
-          const inputLsi = useLsiValues(ResponsiveFormLsi);
+          // const inputLsi = useLsiValues(ResponsiveFormLsi);
 
           if (this.state.form === true) {
             return <UU5.Bricks.Div>
