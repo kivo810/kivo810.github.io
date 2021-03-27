@@ -48,6 +48,7 @@
       // const right = UU5.Common.Css.css({ float: "right", width: "50%"});
       // const right = UU5.Common.Css.css({ float: "right"});
 
+      const center = UU5.Common.Css.css({ margin: "0 auto"});
       const inline = UU5.Common.Css.css({ display: "inline-block", maxWidth: "450px"});
 
       const Page = UU5.Common.VisualComponent.create({
@@ -155,7 +156,7 @@
 
                 <UU5.Bricks.Div>
                   <UU5.Bricks.Image src={"https://cdn.pixabay.com/photo/2017/03/12/13/41/beaded-2137080_960_720.jpg"}
-                                    responsive={true} >
+                                    responsive={true} className={center}>
                   </UU5.Bricks.Image>
                   <UU5.Forms.Checkboxes
                           label={
@@ -378,7 +379,7 @@
                   />
                 </UU5.Bricks.Div>
 
-                <UU5.Bricks.Div>
+                <UU5.Bricks.Div className={center} align="center" >
                   <UU5.Bricks.Button onClick={() => this.setState({ formButton : false })}>
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
