@@ -22,19 +22,16 @@ function formatDate(date) {
     return [year, month, day].join('-');
 }
 
-function validateDate(todaysDate) {
-    //TODO
+function validateDate(beforeYesterday) {
     let date = new Date();
     date.setDate(date.getDate() - 2);
-    let beforeYesterday = formatDate(date);
-    alert(beforeYesterday);
-    return beforeYesterday === todaysDate;
+    let beforeYesterdayDate = formatDate(date);
+    // alert(beforeYesterdayDate);
+    return beforeYesterdayDate === beforeYesterday;
 }
 
 function validateVideo(videoAnswer) {
-    //TODO
-    console.log(videoAnswer.dogs);
-    return false;
+    return parseInt(videoAnswer) === 4;
 }
 
 function validateRange(rangeAnswer) {
@@ -43,8 +40,12 @@ function validateRange(rangeAnswer) {
 
 function validateTime(timeAnswer) {
     // alert(timeAnswer);
-    let time = timeAnswer.split(":");
-    return parseInt(time[0]) === 7 && parseInt(time[1]) > 9 && parseInt(time[1]) < 26;
+    if (timeAnswer === undefined || timeAnswer === null){
+        return false;
+    } else {
+        let time = timeAnswer.split(":");
+        return parseInt(time[0]) === 7 && parseInt(time[1]) > 9 && parseInt(time[1]) < 26;
+    }
 }
 
 function validateBrightestColor(colorPickAnswer) {
@@ -52,15 +53,15 @@ function validateBrightestColor(colorPickAnswer) {
 }
 
 function validatePlaceholder(placeholderAnswer) {
-    return placeholderAnswer === "uu5uafuu5";
+    return placeholderAnswer === "responsive";
 }
 
 function validateNavbar(navbarAnswer) {
-    return navbarAnswer === "myprofile";
+    return navbarAnswer === "logout";
 }
 
 function validateYtb(ytbAnswer) {
-    return ytbAnswer.toLowerCase() === "vladimir";
+    return ytbAnswer.toLowerCase() === "vladimir" || ytbAnswer.toLowerCase() === "vladimír";
 }
 
 function validatePageNumber(pageAnswer) {
@@ -106,7 +107,7 @@ function validateFormComponents(opt){
     wrongAnswers.push("2");
 }
 
-    if (validateDate(opt.component.getValues().todaysDate)) {
+    if (validateDate(opt.component.getValues().beforeYesterday)) {
     correctAnswers++;
 } else {
     incorrectAnswers++;
