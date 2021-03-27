@@ -220,7 +220,8 @@ function validateForm(opt, timer) {
     alert("Correct answers: " + correctAnswers);
     alert("Wrong answers: " + incorrectAnswers);
     alert("Wrong answers: " + wrongAnswers);
-    alert(JSON.stringify(opt.component.getValues(), null, 1))
+    alert(JSON.stringify(opt.component.getValues(), null, 1));
+    console.log(JSON.stringify(opt.component.getValues(), null, 1));
     // window.location.reload();
 }
 
