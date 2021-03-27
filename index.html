@@ -599,19 +599,54 @@
                           }
                           name={"flavorSelect"}
                   >
-                    <UU5.Forms.Select.Option value="Apple"/>
-                    <UU5.Forms.Select.Option value="Vanilla"/>
-                    <UU5.Forms.Select.Option value="Orange"/>
-                    <UU5.Forms.Select.Option value="Raspberry"/>
-                    <UU5.Forms.Select.Option value="Cocoa"/>
+                    <UU5.Forms.Select.Option content={<UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Apple
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Jablko
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>} value="apple"/>
+                    <UU5.Forms.Select.Option content={<UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Vanilla
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Vanilka
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>} value="vanilla"/>
+                    <UU5.Forms.Select.Option content={<UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Orange
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Oranžová
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>} value="orange"/>
+                    <UU5.Forms.Select.Option content={<UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Raspberry
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Malina
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>} value="raspberry"/>
+                    <UU5.Forms.Select.Option content={<UU5.Bricks.Lsi>
+                      <UU5.Bricks.Lsi.Item language="en">
+                        Cocoa
+                      </UU5.Bricks.Lsi.Item>
+                      <UU5.Bricks.Lsi.Item language="sk">
+                        Čokoláda
+                      </UU5.Bricks.Lsi.Item>
+                    </UU5.Bricks.Lsi>} value="cocoa"/>
                   </UU5.Forms.Select>
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div>
                   <UU5.Bricks.GoogleMap
                           mapType="roadmap"
-                          latitude={49.2542036}
-                          longitude={19.035632}
+                          latitude={49.258543}
+                          longitude={19.063091}
                           googleApiKey="AIzaSyBkv-K9tpS-MrvvRKOpIGEj7H5wwdHD9pA"
                   />
 
@@ -619,20 +654,20 @@
                           label={
                             <UU5.Bricks.Lsi>
                               <UU5.Bricks.Lsi.Item language="en">
-                                16. Which place is pinched in the map?
+                                16. Which famous village is west closest to the marked place on the map?
                               </UU5.Bricks.Lsi.Item>
                               <UU5.Bricks.Lsi.Item language="sk">
-                                16. Ktoré miesto je pripnuté na mape?
+                                16. Ktoré známa obec je západne najbližšie k vyznačenému miestu na mape?
                               </UU5.Bricks.Lsi.Item>
                             </UU5.Bricks.Lsi>
                           }
                           name={"mapAnswer"}
                   >
                     <UU5.Forms.Select.Option value="Rajec"/>
-                    <UU5.Forms.Select.Option value="Certovica"/>
-                    <UU5.Forms.Select.Option value="Terchova"/>
-                    <UU5.Forms.Select.Option value="Zazriva"/>
-                    <UU5.Forms.Select.Option value="Namestovo"/>
+                    <UU5.Forms.Select.Option value="Čertovica"/>
+                    <UU5.Forms.Select.Option value="Terchová"/>
+                    <UU5.Forms.Select.Option value="Zázriva"/>
+                    <UU5.Forms.Select.Option value="Krásna nad Kysucou"/>
                   </UU5.Forms.Select>
                 </UU5.Bricks.Div>
 

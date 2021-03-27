@@ -1,6 +1,7 @@
 function validateImage(imgAnswer) {
-    //TODO
-    return true;
+
+    // alert(imgAnswer.brown);
+    return imgAnswer.yellow && !imgAnswer.brown && imgAnswer.red && imgAnswer.pink && imgAnswer.green && !imgAnswer.white;
     // return imgAnswer === "8";
 }
 
@@ -81,11 +82,11 @@ function validateTable(tableAnswer) {
 }
 
 function validateIceCream(flavorSelect) {
-    return flavorSelect === "Cocoa";
+    return flavorSelect === "cocoa";
 }
 
 function validateMap(mapAnswer) {
-    return mapAnswer === "Terchova";
+    return mapAnswer === "Terchová";
 }
 
 function validateFormComponents(opt){
