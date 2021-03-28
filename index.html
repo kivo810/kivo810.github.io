@@ -67,7 +67,11 @@
             timer: null,
             videoAnswer: 0,
             form: false,
-            answers: {timeAnswer: ""}
+            answers: [
+
+              {timeAnswer: ""},
+              {rangeAnswer: 20},
+              {colorPickAnswer: ""}]
             // imgAnswer: {
             //   yellow: false,
             //   brown: false,
@@ -95,6 +99,11 @@
           console.log(opt.component.getName());
           let answers = this.state.answers;
           answers[opt.component.getName()] = opt.value;
+          console.log(answers);
+          console.log(opt.component.getName());
+          console.log(opt.value);
+          console.log(this.state.answers);
+          console.log(this.state.answers["colorPickAnswer"]);
           this.setState({ answers: answers});
         },
 
@@ -325,11 +334,12 @@
                     </UU5.Bricks.Lsi>
                   }
                                     name={"rangeAnswer"}
-                                    value={20}
                                     size="m"
                                     min={0}
                                     max={150}
                                     step={1}
+                                    value={this.state.answers.rangeAnswer}
+                                    onBlur={this._handleBlur}
                                     disabled={this.state.formButton}
                   />
                 </UU5.Bricks.Div>
@@ -368,6 +378,8 @@
                           }
                           name={"colorPickAnswer"}
                           size={"m"}
+                          value={this.state.answers.colorPickAnswer}
+                          onChange={this._handleBlur}
                   />
                 </UU5.Bricks.Div>
 
