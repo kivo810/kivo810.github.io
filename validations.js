@@ -93,12 +93,14 @@ function validateFormComponents(opt){
     let correctAnswers = 0;
     let incorrectAnswers = 0;
     let wrongAnswers = [];
+    let bad = [];
 
     if (validateImage(opt.component.getValues().imgAnswer)){
     correctAnswers++;
 } else {
     incorrectAnswers++;
     wrongAnswers.push("1");
+    bad.push("Image answer");
 }
 
     if (validateColor(opt.component.getValues().colorMix)){
@@ -106,6 +108,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("2");
+    bad.push("Color mix answer");
 }
 
     if (validateDate(opt.component.getValues().beforeYesterday)) {
@@ -113,6 +116,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("3");
+    bad.push("Date answer");
 }
 
     if (validateVideo(opt.component.getValues().videoAnswer)){
@@ -120,6 +124,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("4");
+    bad.push("Video answer");
 }
 
     if (validateRange(opt.component.getValues().rangeAnswer)){
@@ -127,20 +132,23 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("5");
+    bad.push("Range answer");
 }
 
     if (validateTime(opt.component.getValues().timeAnswer)) {
     correctAnswers++;
 } else {
     incorrectAnswers++;
-    wrongAnswers.push("6")
+    wrongAnswers.push("6");
+    bad.push("Time answer");
 }
 
     if (validateBrightestColor(opt.component.getValues().colorPickAnswer)){
     correctAnswers++;
 } else {
     incorrectAnswers++;
-    wrongAnswers.push("7")
+    wrongAnswers.push("7");
+    bad.push("Color pick answer");
 }
 
     if (validatePlaceholder(opt.component.getValues().placeholderAnswer)) {
@@ -148,6 +156,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("8");
+    bad.push("Placeholder answer");
 }
 
     if (validateNavbar(opt.component.getValues().navbarAnswer)){
@@ -155,6 +164,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("9");
+    bad.push("Navigation menu answer");
 }
 
     if (validateYtb(opt.component.getValues().ytbAnswer)){
@@ -162,6 +172,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("10");
+    bad.push("Youtube prisoners answer");
 }
 
     if (validatePageNumber(opt.component.getValues().pageAnswer)){
@@ -169,6 +180,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("11");
+    bad.push("Page number answer");
 }
 
     if (validateOl(opt.component.getValues().orlAnswer)){
@@ -176,6 +188,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("12");
+    bad.push("Ordered list answer");
 }
 
     if (validateCode(opt.component.getValues().codeAnswer)){
@@ -183,6 +196,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("13");
+    bad.push("Code answer");
 }
 
     if (validateTable(opt.component.getValues().tableAnswer)){
@@ -190,6 +204,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("14");
+    bad.push("Table answer");
 }
 
     if (validateIceCream(opt.component.getValues().flavorSelect)){
@@ -197,6 +212,7 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("15");
+    bad.push("Flavor answer");
 }
 
     if (validateMap(opt.component.getValues().mapAnswer)){
@@ -204,9 +220,23 @@ function validateFormComponents(opt){
 } else {
     incorrectAnswers++;
     wrongAnswers.push("16");
+    bad.push("Map answer");
 }
     // validateMap() ? correctAnswers++ : incorrectAnswers++;
-    return { correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers, wrongAnswers: wrongAnswers};
+    return { correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers, wrongAnswers: wrongAnswers, badAnswers: bad};
+}
+
+function showResult(duration, correctAnswers, incorrectAnswers, wrongAnswers, badAnswers) {
+    document.write("<h1>Thank you!</h1>");
+    document.write("<h3>Here is your data: </h3>");
+    document.write("<h3>Form done in: </h3>" + duration);
+    document.write("<h3>Correct answers: </h3>" + correctAnswers);
+    document.write("<h3>Incorrect answers: </h3>" + incorrectAnswers);
+    document.write("<h3>Wrong answers: </h3>" + wrongAnswers);
+    document.write("<h3>Bad answers: </h3>");
+    for (let str of badAnswers){
+        document.write("<h6></h6>" + str);
+    }
 }
 
 function validateForm(opt, timer) {
@@ -215,13 +245,14 @@ function validateForm(opt, timer) {
     // let wrongAnswers = [];
     let d = new Date();
     let duration = (d.getTime() - timer.getTime()) / 1000;
-    const {correctAnswers, incorrectAnswers, wrongAnswers} = validateFormComponents(opt);
+    const {correctAnswers, incorrectAnswers, wrongAnswers, badAnswers} = validateFormComponents(opt);
     alert("Form done in " + duration + "s");
     alert("Correct answers: " + correctAnswers);
     alert("Wrong answers: " + incorrectAnswers);
     alert("Wrong answers: " + wrongAnswers);
     alert(JSON.stringify(opt.component.getValues(), null, 1));
     console.log(JSON.stringify(opt.component.getValues(), null, 1));
+    showResult(duration, correctAnswers, incorrectAnswers, wrongAnswers, badAnswers);
     // window.location.reload();
 }
 
