@@ -68,7 +68,14 @@
             videoAnswer: 0,
             form: false,
             answers: [
-
+              {imgAnswer: {
+                  yellow: false,
+                  brown: false,
+                  red: false,
+                  pink: false,
+                  green: false,
+                  white: false
+                }},
               {timeAnswer: ""},
               {rangeAnswer: 20},
               {colorPickAnswer: ""}]
@@ -94,7 +101,7 @@
           }
         },
 
-        _handleBlur(opt){
+        _handleBlurOrChange(opt){
           console.log(opt);
           console.log(opt.component.getName());
           let answers = this.state.answers;
@@ -208,61 +215,62 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div className={inline}>
-                  <UU5.Forms.Radios label={
-                    <UU5.Bricks.Lsi>
-                      <UU5.Bricks.Lsi.Item language="en">
-                        2. What color is created by mixing red and blue?
-                      </UU5.Bricks.Lsi.Item>
-                      <UU5.Bricks.Lsi.Item language="sk">
-                        2. Aká farba vznikne zmixovanim červenej a modrej?
-                      </UU5.Bricks.Lsi.Item>
-                    </UU5.Bricks.Lsi>
-                  }
-                                    name={"colorMix"}
-                                    size="m"
-                                    inputWidth="150px"
-                                    value={[
-                                      {label: <UU5.Bricks.Lsi>
-                                          <UU5.Bricks.Lsi.Item language="en">
-                                            Brown
-                                          </UU5.Bricks.Lsi.Item>
-                                          <UU5.Bricks.Lsi.Item language="sk">
-                                            Hnedá
-                                          </UU5.Bricks.Lsi.Item>
-                                        </UU5.Bricks.Lsi>, name: 'brown'},
-                                      {label: <UU5.Bricks.Lsi>
-                                          <UU5.Bricks.Lsi.Item language="en">
-                                            Black
-                                          </UU5.Bricks.Lsi.Item>
-                                          <UU5.Bricks.Lsi.Item language="sk">
-                                            Čierna
-                                          </UU5.Bricks.Lsi.Item>
-                                        </UU5.Bricks.Lsi>, name: 'black'},
-                                      {label: <UU5.Bricks.Lsi>
-                                          <UU5.Bricks.Lsi.Item language="en">
-                                            Orange
-                                          </UU5.Bricks.Lsi.Item>
-                                          <UU5.Bricks.Lsi.Item language="sk">
-                                            Oranžová
-                                          </UU5.Bricks.Lsi.Item>
-                                        </UU5.Bricks.Lsi>, name: 'orange'},
-                                      {label: <UU5.Bricks.Lsi>
-                                          <UU5.Bricks.Lsi.Item language="en">
-                                            Magenta
-                                          </UU5.Bricks.Lsi.Item>
-                                          <UU5.Bricks.Lsi.Item language="sk">
-                                            Fialová
-                                          </UU5.Bricks.Lsi.Item>
-                                        </UU5.Bricks.Lsi>, name: 'magenta'},
-                                      {label: <UU5.Bricks.Lsi>
-                                          <UU5.Bricks.Lsi.Item language="en">
-                                            White
-                                          </UU5.Bricks.Lsi.Item>
-                                          <UU5.Bricks.Lsi.Item language="sk">
-                                            Biela
-                                          </UU5.Bricks.Lsi.Item>
-                                        </UU5.Bricks.Lsi>, name: 'white'}
-                                    ]}>
+                  <UU5.Forms.Radios
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                2. What color is created by mixing red and blue?
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                2. Aká farba vznikne zmixovanim červenej a modrej?
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
+                          name={"colorMix"}
+                          size="m"
+                          inputWidth="150px"
+                          value={[
+                            {label: <UU5.Bricks.Lsi>
+                                <UU5.Bricks.Lsi.Item language="en">
+                                  Brown
+                                </UU5.Bricks.Lsi.Item>
+                                <UU5.Bricks.Lsi.Item language="sk">
+                                  Hnedá
+                                </UU5.Bricks.Lsi.Item>
+                              </UU5.Bricks.Lsi>, name: 'brown'},
+                            {label: <UU5.Bricks.Lsi>
+                                <UU5.Bricks.Lsi.Item language="en">
+                                  Black
+                                </UU5.Bricks.Lsi.Item>
+                                <UU5.Bricks.Lsi.Item language="sk">
+                                  Čierna
+                                </UU5.Bricks.Lsi.Item>
+                              </UU5.Bricks.Lsi>, name: 'black'},
+                            {label: <UU5.Bricks.Lsi>
+                                <UU5.Bricks.Lsi.Item language="en">
+                                  Orange
+                                </UU5.Bricks.Lsi.Item>
+                                <UU5.Bricks.Lsi.Item language="sk">
+                                  Oranžová
+                                </UU5.Bricks.Lsi.Item>
+                              </UU5.Bricks.Lsi>, name: 'orange'},
+                            {label: <UU5.Bricks.Lsi>
+                                <UU5.Bricks.Lsi.Item language="en">
+                                  Magenta
+                                </UU5.Bricks.Lsi.Item>
+                                <UU5.Bricks.Lsi.Item language="sk">
+                                  Fialová
+                                </UU5.Bricks.Lsi.Item>
+                              </UU5.Bricks.Lsi>, name: 'magenta'},
+                            {label: <UU5.Bricks.Lsi>
+                                <UU5.Bricks.Lsi.Item language="en">
+                                  White
+                                </UU5.Bricks.Lsi.Item>
+                                <UU5.Bricks.Lsi.Item language="sk">
+                                  Biela
+                                </UU5.Bricks.Lsi.Item>
+                              </UU5.Bricks.Lsi>, name: 'white'}
+                          ]}>
                   </UU5.Forms.Radios>
                 </UU5.Bricks.Div>
 
@@ -270,19 +278,22 @@
                   <UU5.Forms.DatePicker
                           disabled={this.state.formButton}
                           label={
-                    <UU5.Bricks.Lsi>
-                      <UU5.Bricks.Lsi.Item language="en">
-                        3. What date was the day before yesterday?
-                      </UU5.Bricks.Lsi.Item>
-                      <UU5.Bricks.Lsi.Item language="sk">
-                        3. Aký dátum bol predvčerom?
-                      </UU5.Bricks.Lsi.Item>
-                    </UU5.Bricks.Lsi>
-                  }
-                                        name={"beforeYesterday"}
-                                        valueType="iso"
-                                        placeholder={UU5.Common.Tools.getDateString("1990-11-21", { country: "sk-sk" })}
-                                        size="m" />
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                3. What date was the day before yesterday?
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                3. Aký dátum bol predvčerom?
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
+                          name={"beforeYesterday"}
+                          valueType="iso"
+                          placeholder={UU5.Common.Tools.getDateString("1990-11-21", { country: "sk-sk" })}
+                          size="m"
+
+
+                  />
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div align="center">
@@ -292,55 +303,46 @@
                                     responsive={true}
                                     disableControls={false}>
                   </UU5.Bricks.Video>
-                  <UU5.Forms.Number label={
-                    <UU5.Bricks.Lsi>
-                      <UU5.Bricks.Lsi.Item language="en">
-                        4. How many cables (for cable car) are in the video?
-                      </UU5.Bricks.Lsi.Item>
-                      <UU5.Bricks.Lsi.Item language="sk">
-                        4. Koľko káblov (pre lanovku) je vo videu?
-                      </UU5.Bricks.Lsi.Item>
-                    </UU5.Bricks.Lsi>
-                  }
+                  <UU5.Forms.Number
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                4. How many cables (for cable car) are in the video?
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                4. Koľko káblov (pre lanovku) je vo videu?
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
                           name={"videoAnswer"}
                           size="m"
                           min={0}
                           max={15}
                           step={1}
                           value={this.state.videoAnswer}
-                                        // name={"videoAnswer"}
-                                        // size="m"
-                                        // inputWidth="200px"
-                                        // value={[
-                                        //   {label: 'Dogs', name: 'dogs'},
-                                        //   {label: 'Cats', name: 'cats'},
-                                        //   {label: 'Yaks', name: 'yaks'},
-                                        //   {label: 'Value4', name: 'value4'},
-                                        //   {label: 'Value5', name: 'value5'},
-                                        //   {label: 'Value6', name: 'value6'}
-                                        // ]}
                   />
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div className={inline}>
-                  <UU5.Forms.Slider label={
-                    <UU5.Bricks.Lsi>
-                      <UU5.Bricks.Lsi.Item language="en">
-                        5. Choose volume more than 100
-                      </UU5.Bricks.Lsi.Item>
-                      <UU5.Bricks.Lsi.Item language="sk">
-                        5. Zvoľ hodnotu vyššiu ako 100
-                      </UU5.Bricks.Lsi.Item>
-                    </UU5.Bricks.Lsi>
-                  }
-                                    name={"rangeAnswer"}
-                                    size="m"
-                                    min={0}
-                                    max={150}
-                                    step={1}
-                                    value={this.state.answers.rangeAnswer}
-                                    onBlur={this._handleBlur}
-                                    disabled={this.state.formButton}
+                  <UU5.Forms.Slider
+                          label={
+                            <UU5.Bricks.Lsi>
+                              <UU5.Bricks.Lsi.Item language="en">
+                                5. Choose volume more than 100
+                              </UU5.Bricks.Lsi.Item>
+                              <UU5.Bricks.Lsi.Item language="sk">
+                                5. Zvoľ hodnotu vyššiu ako 100
+                              </UU5.Bricks.Lsi.Item>
+                            </UU5.Bricks.Lsi>
+                          }
+                          name={"rangeAnswer"}
+                          size="m"
+                          min={0}
+                          max={150}
+                          step={1}
+                          value={this.state.answers.rangeAnswer}
+                          onBlur={this._handleBlurOrChange}
+                          disabled={this.state.formButton}
                   />
                 </UU5.Bricks.Div>
 
@@ -360,7 +362,7 @@
                           size="m"
                           placeholder={"10:00"}
                           value={this.state.answers.timeAnswer}
-                          onBlur={this._handleBlur}
+                          onBlur={this._handleBlurOrChange}
                   />
                 </UU5.Bricks.Div>
 
@@ -379,7 +381,7 @@
                           name={"colorPickAnswer"}
                           size={"m"}
                           value={this.state.answers.colorPickAnswer}
-                          onChange={this._handleBlur}
+                          onChange={this._handleBlurOrChange}
                   />
                 </UU5.Bricks.Div>
 
@@ -403,7 +405,7 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div className={center} align="center" hidden={!this.state.formButton} >
-                  <UU5.Bricks.Button onClick={() => this.setState({ formButton : false, timeAnswer: this.state.timeAnswer })}>
+                  <UU5.Bricks.Button onClick={() => this.setState({ formButton : false })}>
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
                         Click to expand more question and enable answers
