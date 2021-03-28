@@ -67,6 +67,7 @@
             timer: null,
             videoAnswer: 0,
             form: false,
+            answers: {timeAnswer: ""}
             // imgAnswer: {
             //   yellow: false,
             //   brown: false,
@@ -87,6 +88,14 @@
             // codeAnswer: "",
             // tableAnswer: ""
           }
+        },
+
+        _handleBlur(opt){
+          console.log(opt);
+          console.log(opt.component.getName());
+          let answers = this.state.answers;
+          answers[opt.component.getName()] = opt.value;
+          this.setState({ answers: answers});
         },
 
         _contentRender() {
@@ -340,6 +349,8 @@
                           name={"timeAnswer"}
                           size="m"
                           placeholder={"10:00"}
+                          value={this.state.answers.timeAnswer}
+                          onBlur={this._handleBlur}
                   />
                 </UU5.Bricks.Div>
 
@@ -380,7 +391,7 @@
                 </UU5.Bricks.Div>
 
                 <UU5.Bricks.Div className={center} align="center" hidden={!this.state.formButton} >
-                  <UU5.Bricks.Button onClick={() => this.setState({ formButton : false })}>
+                  <UU5.Bricks.Button onClick={() => this.setState({ formButton : false, timeAnswer: this.state.timeAnswer })}>
                     <UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
                         Click to expand more question and enable answers
