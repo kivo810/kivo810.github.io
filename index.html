@@ -76,9 +76,22 @@
                   green: false,
                   white: false
                 }},
+              {colorMix: null},
+              {beforeYesterday: null},
+              {videoAnswer: 0},
+              {rangeAnswer: 0},
               {timeAnswer: ""},
-              {rangeAnswer: 20},
-              {colorPickAnswer: ""}]
+              {placeholderAnswer: ""},
+              {colorPickAnswer: ""},
+              {navbarAnswer: null},
+              {ytbAnswer: ""},
+              {pageAnswer: null},
+              {orlAnswer: ""},
+              {codeAnswer: ""},
+              {tableAnswer: ""},
+              {flavorSelect: ""},
+              {mapAnswer: ""}
+            ]
             // imgAnswer: {
             //   yellow: false,
             //   brown: false,
@@ -291,8 +304,8 @@
                           valueType="iso"
                           placeholder={UU5.Common.Tools.getDateString("1990-11-21", { country: "sk-sk" })}
                           size="m"
-
-
+                          onBlur={this._handleBlurOrChange}
+                          value={this.state.answers.beforeYesterday}
                   />
                 </UU5.Bricks.Div>
 
@@ -319,7 +332,8 @@
                           min={0}
                           max={15}
                           step={1}
-                          value={this.state.videoAnswer}
+                          onChange={this._handleBlurOrChange}
+                          value={this.state.answers.videoAnswer}
                   />
                 </UU5.Bricks.Div>
 
@@ -341,7 +355,7 @@
                           max={150}
                           step={1}
                           value={this.state.answers.rangeAnswer}
-                          onBlur={this._handleBlurOrChange}
+                          onChange={this._handleBlurOrChange}
                           disabled={this.state.formButton}
                   />
                 </UU5.Bricks.Div>
@@ -401,6 +415,8 @@
                           placeholder={"responsive"}
                           size="m"
                           disabled={this.state.formButton}
+                          onBlur={this._handleBlurOrChange}
+                          value={this.state.answers.placeholderAnswer}
                   />
                 </UU5.Bricks.Div>
 
@@ -489,6 +505,8 @@
                           name={"ytbAnswer"}
                           placeholder={"Ladislav"}
                           size="m"
+                          onBlur={this._handleBlurOrChange}
+                          value={this.state.answers.ytbAnswer}
                   />
                 </UU5.Bricks.Div>
 
@@ -509,6 +527,8 @@
                           min={1}
                           max={12}
                           step={1}
+                          onChange={this._handleBlurOrChange}
+                          value={this.state.answers.pageAnswer}
                   />
                 </UU5.Bricks.Div>
 
@@ -542,6 +562,8 @@
                           </UU5.Bricks.Lsi>}
                           name={"orlAnswer"}
                           size="m"
+                          onChange={this._handleBlurOrChange}
+                          value={this.state.answers.orlAnswer}
                   >
                     <UU5.Forms.Select.Option value="1"/>
                     <UU5.Forms.Select.Option value="2"/>
@@ -570,6 +592,8 @@
                           name={"codeAnswer"}
                           placeholder="word"
                           size="m"
+                          onBlur={this._handleBlurOrChange}
+                          value={this.state.answers.codeAnswer}
                   />
                 </UU5.Bricks.Div>
 
@@ -627,6 +651,8 @@
                           name={"tableAnswer"}
                           placeholder="120"
                           size="m"
+                          onBlur={this._handleBlurOrChange}
+                          value={this.state.answers.tableAnswer}
                   />
                 </UU5.Bricks.Div>
 
@@ -643,6 +669,8 @@
                             </UU5.Bricks.Lsi>
                           }
                           name={"flavorSelect"}
+                          onChange={this._handleBlurOrChange}
+                          value={this.state.answers.flavorSelect}
                   >
                     <UU5.Forms.Select.Option content={<UU5.Bricks.Lsi>
                       <UU5.Bricks.Lsi.Item language="en">
@@ -707,6 +735,8 @@
                             </UU5.Bricks.Lsi>
                           }
                           name={"mapAnswer"}
+                          onChange={this._handleBlurOrChange}
+                          value={this.state.answers.mapAnswer}
                   >
                     <UU5.Forms.Select.Option value="Rajec"/>
                     <UU5.Forms.Select.Option value="Čertovica"/>
