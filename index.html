@@ -68,14 +68,16 @@
             videoAnswer: 0,
             form: false,
             answers: [
-              {imgAnswer: {
+              {imgAnswer:
+                        {
                   yellow: false,
                   brown: false,
                   red: false,
                   pink: false,
                   green: false,
                   white: false
-                }},
+                }
+                },
               {colorMix: null},
               {beforeYesterday: null},
               {videoAnswer: 0},
@@ -125,6 +127,17 @@
           console.log(answers);
           console.log(opt);
           console.log(opt.value);
+          // console.log("hahahah");
+          // console.log(this.state.answers["imgAnswer"]);
+          // console.log(this.state.answers["imgAnswer"].yellow);
+          console.log(this.state.answers[0]);
+          this.setState({ answers: answers });
+        },
+
+        _handleImgOnChange(opt){
+          let answers = this.state.answers;
+          answers[0] = opt.value;
+          console.log(answers);
           console.log(this.state.answers);
           this.setState({ answers: answers });
         },
@@ -132,6 +145,9 @@
         _handleOnChange(opt){
           let answers = this.state.answers;
           answers.colorMix = opt.value;
+          console.log(this._input.getValue());
+          console.log(opt.component.getParent());
+          console.log(opt);
           console.log(opt.value);
           console.log(answers);
           console.log(this.state.answers);
@@ -221,7 +237,7 @@
                           name={"imgAnswer"}
                           size="m"
                           inputWidth="200px"
-                          onChange={this._handleBlurOrChange}
+                          onChange={this._handleImgOnChange}
                           value={[
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
@@ -230,7 +246,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Žltá
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'yellow', value: this.state.answers.imgAnswer},
+                              </UU5.Bricks.Lsi>, name: 'yellow', value: this.state.answers[0].yellow},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Brown
@@ -238,7 +254,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Hnedá
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'brown', value: this.state.answers.imgAnswer},
+                              </UU5.Bricks.Lsi>, name: 'brown', value: this.state.answers[0].brown},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Red
@@ -246,7 +262,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Červená
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'red', value: this.state.answers.imgAnswer},
+                              </UU5.Bricks.Lsi>, name: 'red', value: this.state.answers[0].red},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Pink
@@ -254,7 +270,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Ružová
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'pink', value: this.state.answers.imgAnswer},
+                              </UU5.Bricks.Lsi>, name: 'pink', value: this.state.answers[0].pink},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Green
@@ -262,7 +278,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Zelená
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'green', value: this.state.answers.imgAnswer},
+                              </UU5.Bricks.Lsi>, name: 'green', value: this.state.answers[0].green},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   White
@@ -270,7 +286,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Biela
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'white', value: this.state.answers.imgAnswer}
+                              </UU5.Bricks.Lsi>, name: 'white', value: this.state.answers[0].white}
                             ]}
                           // name={"imgNumber"}
                           // size="m"
