@@ -115,16 +115,27 @@
         },
 
         _handleBlurOrChange(opt){
-          console.log(opt);
-          console.log(opt.component.getName());
+          // console.log(opt);
+          // console.log(opt.component.getName());
           let answers = this.state.answers;
           answers[opt.component.getName()] = opt.value;
-          console.log(answers);
+          console.log(answers[opt.component.getName()]);
           console.log(opt.component.getName());
+          console.log("lalalala");
+          console.log(answers);
+          console.log(opt);
           console.log(opt.value);
           console.log(this.state.answers);
-          console.log(this.state.answers["colorPickAnswer"]);
-          this.setState({ answers: answers});
+          this.setState({ answers: answers });
+        },
+
+        _handleOnChange(opt){
+          let answers = this.state.answers;
+          answers.colorMix = opt.value;
+          console.log(opt.value);
+          console.log(answers);
+          console.log(this.state.answers);
+          this.setState({ answers: answers });
         },
 
         _contentRender() {
@@ -210,6 +221,7 @@
                           name={"imgAnswer"}
                           size="m"
                           inputWidth="200px"
+                          onChange={this._handleBlurOrChange}
                           value={[
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
@@ -218,7 +230,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Žltá
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'yellow'},
+                              </UU5.Bricks.Lsi>, name: 'yellow', value: this.state.answers.imgAnswer},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Brown
@@ -226,7 +238,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Hnedá
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'brown'},
+                              </UU5.Bricks.Lsi>, name: 'brown', value: this.state.answers.imgAnswer},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Red
@@ -234,7 +246,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Červená
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'red'},
+                              </UU5.Bricks.Lsi>, name: 'red', value: this.state.answers.imgAnswer},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Pink
@@ -242,7 +254,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Ružová
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'pink'},
+                              </UU5.Bricks.Lsi>, name: 'pink', value: this.state.answers.imgAnswer},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Green
@@ -250,7 +262,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Zelená
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'green'},
+                              </UU5.Bricks.Lsi>, name: 'green', value: this.state.answers.imgAnswer},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   White
@@ -258,7 +270,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Biela
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'white'}
+                              </UU5.Bricks.Lsi>, name: 'white', value: this.state.answers.imgAnswer}
                             ]}
                           // name={"imgNumber"}
                           // size="m"
@@ -284,6 +296,7 @@
                           name={"colorMix"}
                           size="m"
                           inputWidth="150px"
+                          onChange={this._handleOnChange}
                           value={[
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
@@ -292,7 +305,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Hnedá
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'brown'},
+                              </UU5.Bricks.Lsi>, name: 'brown', value: this.state.answers.colorMix ? "brown" : false},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Black
@@ -300,7 +313,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Čierna
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'black'},
+                              </UU5.Bricks.Lsi>, name: 'black', value: this.state.answers.colorMix ? "black": false},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Orange
@@ -308,7 +321,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Oranžová
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'orange'},
+                              </UU5.Bricks.Lsi>, name: 'orange', value: this.state.answers.colorMix ? "orange" : false},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Magenta
@@ -316,7 +329,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Fialová
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'magenta'},
+                              </UU5.Bricks.Lsi>, name: 'magenta', value: this.state.answers.colorMix ? "magenta" : false},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   White
@@ -324,7 +337,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Biela
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'white'}
+                              </UU5.Bricks.Lsi>, name: 'white', value: this.state.answers.colorMix ? "white" : false}
                           ]}>
                   </UU5.Forms.Radios>
                 </UU5.Bricks.Div>
