@@ -78,7 +78,13 @@
                   white: false
                 }
                 },
-              {colorMix: null},
+              {colorMix: {
+                  brown: false,
+                  black: false,
+                  orange: false,
+                  magenta: false,
+                  white: false
+                }},
               {beforeYesterday: null},
               {videoAnswer: 0},
               {rangeAnswer: 0},
@@ -142,14 +148,14 @@
           this.setState({ answers: answers });
         },
 
-        _handleOnChange(opt){
+        _handleOnChangeColorMix(opt){
           let answers = this.state.answers;
-          answers.colorMix = opt.value;
-          console.log(this._input.getValue());
-          console.log(opt.component.getParent());
           console.log(opt);
+          console.log("value");
           console.log(opt.value);
-          console.log(answers);
+          console.log("answers[1]")
+          console.log(answers[1].colorMix[opt.value]);
+          answers[1].colorMix[opt.value] = true;
           console.log(this.state.answers);
           this.setState({ answers: answers });
         },
@@ -312,7 +318,7 @@
                           name={"colorMix"}
                           size="m"
                           inputWidth="150px"
-                          onChange={this._handleOnChange}
+                          onChange={this._handleOnChangeColorMix}
                           value={[
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
@@ -321,7 +327,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Hnedá
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'brown', value: this.state.answers.colorMix ? "brown" : false},
+                              </UU5.Bricks.Lsi>, name: 'brown', value: this.state.answers[1].colorMix["brown"]},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Black
@@ -329,7 +335,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Čierna
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'black', value: this.state.answers.colorMix ? "black": false},
+                              </UU5.Bricks.Lsi>, name: 'black', value: this.state.answers[1].colorMix["black"]},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Orange
@@ -337,7 +343,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Oranžová
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'orange', value: this.state.answers.colorMix ? "orange" : false},
+                              </UU5.Bricks.Lsi>, name: 'orange', value: this.state.answers[1].colorMix["orange"]},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Magenta
@@ -345,7 +351,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Fialová
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'magenta', value: this.state.answers.colorMix ? "magenta" : false},
+                              </UU5.Bricks.Lsi>, name: 'magenta', value: this.state.answers[1].colorMix["magenta"]},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   White
@@ -353,7 +359,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Biela
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'white', value: this.state.answers.colorMix ? "white" : false}
+                              </UU5.Bricks.Lsi>, name: 'white', value: this.state.answers[1].colorMix["white"]}
                           ]}>
                   </UU5.Forms.Radios>
                 </UU5.Bricks.Div>
