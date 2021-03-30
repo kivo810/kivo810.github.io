@@ -62,7 +62,7 @@ function validateNavbar(navbarAnswer) {
 }
 
 function validateYtb(ytbAnswer) {
-    return ytbAnswer.toLowerCase().trim() === "vladimir" || ytbAnswer.toLowerCase().trim() === "vladimír";
+    return ytbAnswer.trim().toLowerCase() === "vladimir" || ytbAnswer.trim().toLowerCase() === "vladimír";
 }
 
 function validatePageNumber(pageAnswer) {
