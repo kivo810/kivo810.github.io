@@ -1,7 +1,7 @@
 function validateImage(imgAnswer) {
 
     // alert(imgAnswer.brown);
-    return imgAnswer.yellow && !imgAnswer.brown && imgAnswer.red && imgAnswer.pink && imgAnswer.green && !imgAnswer.white;
+    return imgAnswer.yellow && imgAnswer.lightBlue && imgAnswer.red && imgAnswer.pink && imgAnswer.green && !imgAnswer.white;
     // return imgAnswer === "8";
 }
 
