@@ -231,14 +231,14 @@ function validateFormComponents(opt){
 function showResult(duration, correctAnswers, incorrectAnswers, wrongAnswers, badAnswers) {
     document.write("<h1>Thank you!</h1>");
     document.write("<h3>Here is your data: </h3>");
-    document.write("<h3>Form done in: </h3>" + duration);
+    document.write("<h3>Form done in: </h3>" + duration + "s");
     document.write("<h3>Correct answers: </h3>" + correctAnswers);
     document.write("<h3>Incorrect answers: </h3>" + incorrectAnswers);
     document.write("<h3>Wrong answers: </h3>" + wrongAnswers);
-    document.write("<h3>Bad answers: </h3>");
-    for (let str of badAnswers){
-        document.write("<h6></h6>" + str);
-    }
+    // document.write("<h3>Bad answers: </h3>");
+    // for (let str of badAnswers){
+    //     document.write("<h6></h6>" + str);
+    // }
 }
 
 function validateForm(opt, timer) {
@@ -248,11 +248,11 @@ function validateForm(opt, timer) {
     let d = new Date();
     let duration = (d.getTime() - timer.getTime()) / 1000;
     const {correctAnswers, incorrectAnswers, wrongAnswers, badAnswers} = validateFormComponents(opt);
-    alert("Form done in " + duration + "s");
-    alert("Correct answers: " + correctAnswers);
-    alert("Wrong answers: " + incorrectAnswers);
-    alert("Wrong answers: " + wrongAnswers);
-    alert(JSON.stringify(opt.component.getValues(), null, 1));
+    // alert("Form done in " + duration + "s");
+    // alert("Correct answers: " + correctAnswers);
+    // alert("Wrong answers: " + incorrectAnswers);
+    // alert("Wrong answers: " + wrongAnswers);
+    // alert(JSON.stringify(opt.component.getValues(), null, 1));
     console.log(JSON.stringify(opt.component.getValues(), null, 1));
     showResult(duration, correctAnswers, incorrectAnswers, wrongAnswers, badAnswers);
     // window.location.reload();
