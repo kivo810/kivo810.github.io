@@ -32,7 +32,7 @@ function validateDate(beforeYesterday) {
 }
 
 function validateVideo(videoAnswer) {
-    return parseInt(videoAnswer) === 4;
+    return parseInt(videoAnswer) === 4 || parseInt(videoAnswer) === 3;
 }
 
 function validateRange(rangeAnswer) {
