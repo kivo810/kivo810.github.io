@@ -54,7 +54,8 @@ function validateBrightestColor(colorPickAnswer) {
 }
 
 function validatePlaceholder(placeholderAnswer) {
-    return placeholderAnswer === "responsive";
+    let toValidate = placeholderAnswer.trim().toLocaleLowerCase();
+    return toValidate === "responsive";
 }
 
 function validateNavbar(navbarAnswer) {
@@ -76,7 +77,8 @@ function validateOl(orlAnswer) {
 }
 
 function validateCode(codeAnswer) {
-    return codeAnswer.toLowerCase() === "tincidunt";
+    let toValidate = codeAnswer.trim().toLocaleLowerCase();
+    return toValidate === "tincidunt";
 }
 
 function validateTable(tableAnswer) {
