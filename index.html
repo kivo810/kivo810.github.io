@@ -37,16 +37,10 @@
     <script type="text/babel">
       import UU5 from "uu5g04";
       import "uu5g04-bricks";
-      import { useLsiValues } from "uu5g04-hooks";
       import "uu5g04-forms";
-      // import ResponsiveFormLsi from "/responsive-form-lsi.js";
 
       var widthScreen = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       var width = widthScreen / 2 - 75;
-      // const left = UU5.Common.Css.css({ float: "left", width: "50%"});
-      // const left = UU5.Common.Css.css({ float: "left", width: "300px"});
-      // const right = UU5.Common.Css.css({ float: "right", width: "50%"});
-      // const right = UU5.Common.Css.css({ float: "right"});
 
       const center = UU5.Common.Css.css({ margin: "0 auto"});
       const inline = UU5.Common.Css.css({ display: "inline-block", maxWidth: "450px"});
@@ -61,8 +55,6 @@
 
         getInitialState() {
           return {
-            // value: "John",
-            // text: "Text",
             formButton: true,
             timer: null,
             videoAnswer: 0,
@@ -85,104 +77,47 @@
                   magenta: false,
                   white: false
                 }},
-              {beforeYesterday: null},
-              {videoAnswer: 0},
-              {rangeAnswer: 0},
-              {timeAnswer: ""},
-              {placeholderAnswer: ""},
-              {colorPickAnswer: ""},
               {navbarAnswer: {
                 logout : false,
                 home: false,
                 myprofile: false,
                 news: false
-                }},
-              {ytbAnswer: ""},
-              {pageAnswer: null},
-              {orlAnswer: ""},
-              {codeAnswer: ""},
-              {tableAnswer: ""},
-              {flavorSelect: ""},
-              {mapAnswer: ""}
+                }}
             ]
-            // imgAnswer: {
-            //   yellow: false,
-            //   brown: false,
-            //   red: false,
-            //   pink: false,
-            //   green: false,
-            //   white: false
-            // },
-            // colorMix: null,
-            // beforeYesterday: null,
-            // rangeAnswer: 20,
-            // timeAnswer: "",
-            // colorPickAnswer: "",
-            // placeholderAnswer: "",
-            // navbarAnswer: null,
-            // ytbAnswer: "",
-            // pageAnswer: null,
-            // codeAnswer: "",
-            // tableAnswer: ""
           }
         },
 
         _handleBlurOrChange(opt){
-          // console.log(opt);
-          // console.log(opt.component.getName());
           let answers = this.state.answers;
           answers[opt.component.getName()] = opt.value;
-          console.log(answers[opt.component.getName()]);
-          console.log(opt.component.getName());
-          console.log("lalalala");
-          console.log(answers);
-          console.log(opt);
-          console.log(opt.value);
-          // console.log("hahahah");
-          // console.log(this.state.answers["imgAnswer"]);
-          // console.log(this.state.answers["imgAnswer"].yellow);
-          console.log(this.state.answers[0]);
           this.setState({ answers: answers });
         },
 
         _handleImgOnChange(opt){
           let answers = this.state.answers;
           answers[0] = opt.value;
-          console.log(answers);
-          console.log(this.state.answers);
           this.setState({ answers: answers });
         },
 
         _handleOnChangeColorMix(opt){
           let answers = this.state.answers;
-          console.log(opt);
-          console.log("value");
-          console.log(opt.value);
-          console.log("answers[1]")
-          console.log(answers[1].colorMix[opt.value]);
-          console.log(answers[1].colorMix);
-          console.log("valuessssss");
           for (let value in answers[1].colorMix){
             answers[1].colorMix[value] = false;
-            console.log(`${value}`);
           }
           answers[1].colorMix[opt.value] = true;
-          console.log(answers[1].colorMix[opt.value]);
           this.setState({ answers: answers });
         },
 
         _handleNavbarItemOnChange(opt){
-          console.log(opt);
           let answers = this.state.answers;
-          for (let value in answers[8].navbarAnswer){
-            answers[8].navbarAnswer[value] = false;
+          for (let value in answers[2].navbarAnswer){
+            answers[2].navbarAnswer[value] = false;
           }
-          answers[8].navbarAnswer[opt.value] = true;
+          answers[2].navbarAnswer[opt.value] = true;
           this.setState({ answers: answers });
         },
 
         _contentRender() {
-          // const inputLsi = useLsiValues(ResponsiveFormLsi);
 
           if (this.state.form === true) {
             return <UU5.Bricks.Div>
@@ -315,12 +250,6 @@
                                 </UU5.Bricks.Lsi.Item>
                               </UU5.Bricks.Lsi>, name: 'white', value: this.state.answers[0].white}
                             ]}
-                          // name={"imgNumber"}
-                          // size="m"
-                          // min={0}
-                          // max={100}
-                          // step={1}
-                          // value={this.state.imgNumber}
                   />
                 </UU5.Bricks.Div>
 
@@ -556,7 +485,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Odhlásiť
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'logout', value: this.state.answers[8].navbarAnswer['logout']},
+                              </UU5.Bricks.Lsi>, name: 'logout', value: this.state.answers[2].navbarAnswer['logout']},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   Home
@@ -564,7 +493,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Domov
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'home', value: this.state.answers[8].navbarAnswer['home']},
+                              </UU5.Bricks.Lsi>, name: 'home', value: this.state.answers[2].navbarAnswer['home']},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   My Profile
@@ -572,7 +501,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Môj Profil
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'myprofile', value: this.state.answers[8].navbarAnswer['myprofile']},
+                              </UU5.Bricks.Lsi>, name: 'myprofile', value: this.state.answers[2].navbarAnswer['myprofile']},
                             {label: <UU5.Bricks.Lsi>
                                 <UU5.Bricks.Lsi.Item language="en">
                                   News
@@ -580,7 +509,7 @@
                                 <UU5.Bricks.Lsi.Item language="sk">
                                   Novinky
                                 </UU5.Bricks.Lsi.Item>
-                              </UU5.Bricks.Lsi>, name: 'news', value: this.state.answers[8].navbarAnswer['news']}
+                              </UU5.Bricks.Lsi>, name: 'news', value: this.state.answers[2].navbarAnswer['news']}
                           ]}
                   />
                 </UU5.Bricks.Div>

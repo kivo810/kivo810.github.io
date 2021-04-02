@@ -1,8 +1,5 @@
 function validateImage(imgAnswer) {
-
-    // alert(imgAnswer.brown);
     return imgAnswer.yellow && imgAnswer.lightBlue && imgAnswer.red && imgAnswer.pink && imgAnswer.green && !imgAnswer.white;
-    // return imgAnswer === "8";
 }
 
 function validateColor(colorMix) {
@@ -27,7 +24,6 @@ function validateDate(beforeYesterday) {
     let date = new Date();
     date.setDate(date.getDate() - 2);
     let beforeYesterdayDate = formatDate(date);
-    // alert(beforeYesterdayDate);
     return beforeYesterdayDate === beforeYesterday;
 }
 
@@ -40,7 +36,6 @@ function validateRange(rangeAnswer) {
 }
 
 function validateTime(timeAnswer) {
-    // alert(timeAnswer);
     if (timeAnswer === undefined || timeAnswer === null){
         return false;
     } else {
@@ -226,7 +221,6 @@ function validateFormComponents(opt){
     wrongAnswers.push("16");
     bad.push("Map answer");
 }
-    // validateMap() ? correctAnswers++ : incorrectAnswers++;
     return { correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers, wrongAnswers: wrongAnswers, badAnswers: bad};
 }
 
@@ -237,27 +231,14 @@ function showResult(duration, correctAnswers, incorrectAnswers, wrongAnswers, ba
     document.write("<h3>Correct answers: </h3>" + correctAnswers);
     document.write("<h3>Incorrect answers: </h3>" + incorrectAnswers);
     document.write("<h3>Wrong answers: </h3>" + wrongAnswers);
-    // document.write("<h3>Bad answers: </h3>");
-    // for (let str of badAnswers){
-    //     document.write("<h6></h6>" + str);
-    // }
 }
 
 function validateForm(opt, timer) {
-    // let correctAnswers = 0;
-    // let incorrectAnswers = 0;
-    // let wrongAnswers = [];
     let d = new Date();
     let duration = (d.getTime() - timer.getTime()) / 1000;
     const {correctAnswers, incorrectAnswers, wrongAnswers, badAnswers} = validateFormComponents(opt);
-    // alert("Form done in " + duration + "s");
-    // alert("Correct answers: " + correctAnswers);
-    // alert("Wrong answers: " + incorrectAnswers);
-    // alert("Wrong answers: " + wrongAnswers);
-    // alert(JSON.stringify(opt.component.getValues(), null, 1));
     console.log(JSON.stringify(opt.component.getValues(), null, 1));
     showResult(duration, correctAnswers, incorrectAnswers, wrongAnswers, badAnswers);
-    // window.location.reload();
 }
 
 if (!location.href.match(/^(about:|file:)/)) {
